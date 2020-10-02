@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{351C6D80-4F14-4541-BE0E-A604DBDC1175}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>UserInterfaceV2</RootNamespace>
+    <AssemblyName>UserInterfaceV2</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CircularProgressBar, Version=2.7.0.7, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CircularProgressBar.2.7.0.7\lib\net40\CircularProgressBar.dll</HintPath>
+    </Reference>
+    <Reference Include="DarrenLee.Media">
+      <HintPath>..\..\..\Two\DarrenLee.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WinFormAnimation, Version=1.6.0.4, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\WinFormAnimation.1.6.0.4\lib\net40\WinFormAnimation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BomberPlane.cs" />
+    <Compile Include="DataHandler.cs" />
+    <Compile Include="EnemyBaseObj.cs" />
+    <Compile Include="Game.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Game.Designer.cs">
+      <DependentUpon>Game.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Map.cs" />
+    <Compile Include="MapObj.cs" />
+    <Compile Include="PlaneScouts.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Search.cs" />
+    <Compile Include="Player.cs" />
+    <Compile Include="PlayerLoginException.cs" />
+    <EmbeddedResource Include="Game.resx">
+      <DependentUpon>Game.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ArrowDown.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ArrowUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Collapse Arrow_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Expand Arrow_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Collapse Arrow_20px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Expand Arrow_20px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Expand Arrow_20px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Collapse Arrow_20px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Expand Arrow_20px3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sky2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plane21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\h-36-034-4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plane22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\n903292.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rb-410_-_neon_rainbow_round_ball_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\red-ball-md.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tumblr_n5j8xfAmwW1txar8to1_500.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\n9032921.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\J1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\J2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\J3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\P1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\P2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\P3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\E3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Factory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hospital.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Jet1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Jet2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Jet3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mess.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Officer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plane1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plane2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plane3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tank.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ammo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Armory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bunk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\E1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\E2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20c58df99c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\055_add_new_user-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-login-comfirm-accept-person-id-green-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dce61tw-3cfde162-fb53-4b5a-96cd-ae1df756df65.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\215_MassColor.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nik-shuliahin-rkFIIE9PxH0-unsplash.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\liam-sims-q-AHu_-5rrM-unsplash.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2432585-bigthumbnail.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2432585-bigthumbnail1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hunter-so-pK1aczmelMQ-unsplash.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hunter-so-pK1aczmelMQ-unsplash1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\israel-palacio-IprD0z0zqss-unsplash.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\israel-palacio-IprD0z0zqss-unsplash1.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
